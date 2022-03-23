@@ -149,6 +149,7 @@ div.menu div.switch.on:before {
     -webkit-box-pack: unset;
         -ms-flex-pack: unset;
             justify-content: unset;
+    margin: 0;
   }
   div.menu ul li {
     margin: 0;

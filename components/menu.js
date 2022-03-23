@@ -45,14 +45,14 @@ class Menu extends HTMLElement {
                     Home
                     </li>
                 </a>
-				<a href="/pages/alternatives.html" class="${
+				<a href="/alternatives.html" class="${
 					activePage === "alternatives" ? "active" : ""
 				}" >
                     <li>
                         Self-harm alternatives
                     </li>
                 </a>
-				<a href="/pages/guidelines.html" class="${
+				<a href="/guidelines.html" class="${
 					activePage === "guidelines" ? "active" : ""
 				}">
                     <li >
