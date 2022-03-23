@@ -136,7 +136,7 @@ div.menu div.switch.on:before {
   div.menu {
     position: fixed;
     top: 0;
-    left: 2%;
+    left: 5%;
     width: -webkit-max-content;
     width: -moz-max-content;
     width: max-content;
