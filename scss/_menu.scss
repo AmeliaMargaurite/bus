@@ -1,0 +1,39 @@
+div.menu {
+	background: rgba(0, 0, 0, 0.65);
+	margin-left: 2.4rem;
+	height: max-content;
+	border-radius: 0 0 0.4rem 0.4rem;
+
+	& > div {
+		padding: 1.6rem;
+	}
+
+	h3 {
+		margin: 0;
+	}
+
+	ul {
+		display: grid;
+		text-align: center;
+	}
+
+	li {
+		list-style: none;
+		padding: 1.6rem 0;
+		margin: 0;
+		border-bottom: 1px solid white;
+	}
+
+	a {
+		text-decoration: none;
+	}
+
+	a.active {
+		color: $highlight;
+		font-weight: 600;
+
+		&:hover {
+			color: lighten($highlight, 30%);
+		}
+	}
+}
