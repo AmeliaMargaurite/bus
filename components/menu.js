@@ -40,15 +40,25 @@ class Menu extends HTMLElement {
 				<p>Mental Health Support Chat</p>
 			</div>
 			<ul>
-				<li class="${activePage === "home" ? "active" : ""}">
-                <a href="/">Home</a>
-                </li>
-				<li class="${
+				<a href="/" class="${activePage === "home" ? "active" : ""}">
+                    <li>
+                    Home
+                    </li>
+                </a>
+				<a href="/pages/alternatives.html" class="${
 					activePage === "alternatives" ? "active" : ""
-				}"><a href="/pages/alternatives.html" >Self-harm alternatives</a></li>
-				<li  class="${
+				}" >
+                    <li>
+                        Self-harm alternatives
+                    </li>
+                </a>
+				<a href="/pages/guidelines.html" class="${
 					activePage === "guidelines" ? "active" : ""
-				}"><a href="/pages/guidelines.html">Guidelines</a></li>
+				}">
+                    <li >
+                        Guidelines
+                    </li>
+                </a>
 			</ul>
 		</div>
     `;
