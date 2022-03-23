@@ -1,21 +1,50 @@
 section.content {
-  max-width: 80rem;
-  margin: auto;
-  background: rgba(0, 0, 0, 0.65);
-  padding: 1.6rem;
+  justify-self: flex-start;
+  margin: 1.6rem;
+  background: var(--background-transp);
+  padding: 3.2rem;
+  border-radius: 0.4rem;
+}
+
+section.content ul,
+section.content ol {
+  padding-left: 2.4rem;
+}
+
+@media (min-width: 1023px) {
+  section.content {
+    max-width: 80rem;
+    padding: 1.6rem;
+    margin: auto;
+    border-radius: 0 0 0.4rem 0.4rem;
+  }
 }
 
 div.menu {
-  background: rgba(0, 0, 0, 0.65);
-  margin-left: 2.4rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 1.6rem;
+  position: relative;
+  background: var(--background-transp);
   height: -webkit-max-content;
   height: -moz-max-content;
   height: max-content;
-  border-radius: 0 0 0.4rem 0.4rem;
+  border-radius: 0.4rem;
 }
 
-div.menu > div {
+div.menu > div.wrapper {
   padding: 1.6rem;
+  text-align: center;
+  margin: 0;
+}
+
+div.menu > div.wrapper p {
+  margin: 0;
 }
 
 div.menu h3 {
@@ -23,29 +52,119 @@ div.menu h3 {
 }
 
 div.menu ul {
-  display: -ms-grid;
-  display: grid;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   text-align: center;
 }
 
 div.menu li {
   list-style: none;
-  padding: 1.6rem 0;
+  padding: 0 1.6rem;
   margin: 0;
-  border-bottom: 1px solid white;
+  border-right: 1px solid var(--primary-color);
 }
 
-div.menu a {
+div.menu li a {
   text-decoration: none;
 }
 
-div.menu a.active {
-  color: #14946d;
+div.menu li.active a {
+  color: var(--highlight-color);
   font-weight: 600;
 }
 
-div.menu a.active:hover {
-  color: #59e9bd;
+div.menu li:hover:not(.active) {
+  background-color: var(--primary-color);
+  -webkit-transition: background-color 0.25s ease-in-out;
+  transition: background-color 0.25s ease-in-out;
+}
+
+div.menu li:hover:not(.active) a {
+  color: var(--background-color);
+  -webkit-transition: color 0.25s ease-in-out;
+  transition: color 0.25s ease-in-out;
+}
+
+div.menu div.switch {
+  --width: 4.8rem;
+  --height: 2.4rem;
+  position: absolute;
+  top: 1.6rem;
+  right: 3.2rem;
+  width: var(--width);
+  height: var(--height);
+  background: var(--highlight-color);
+  border-radius: 4rem;
+  -webkit-box-shadow: inset 0 0 10px black;
+          box-shadow: inset 0 0 10px black;
+  margin: 0;
+}
+
+div.menu div.switch:before {
+  --size: calc(var(--height) / 1.5);
+  position: absolute;
+  content: "";
+  width: var(--size);
+  height: var(--size);
+  border-radius: 50%;
+  background: var(--background-color);
+  top: calc(var(--size) / 4);
+  left: calc(var(--size) / 4);
+  -webkit-transition: left 0.25s ease-in-out;
+  transition: left 0.25s ease-in-out;
+}
+
+div.menu div.switch.on:before {
+  left: calc(100% - calc(var(--size) * 1.25));
+  -webkit-transition: left 0.25s ease-in-out;
+  transition: left 0.25s ease-in-out;
+}
+
+@media (min-width: 1023px) {
+  div.menu {
+    position: fixed;
+    top: 0;
+    left: 10%;
+    width: -webkit-max-content;
+    width: -moz-max-content;
+    width: max-content;
+    border-radius: 0 0 0.4rem 0.4rem;
+    margin: auto;
+  }
+  div.menu ul {
+    display: -ms-grid;
+    display: grid;
+    -webkit-box-pack: unset;
+        -ms-flex-pack: unset;
+            justify-content: unset;
+  }
+  div.menu ul li {
+    margin: 0;
+    border: none;
+    border-bottom: 1px solid var(--primary-color);
+    padding: 1.6rem 0;
+  }
+  div.menu div.switch {
+    right: 0.8rem;
+    top: 0.8rem;
+  }
+}
+
+:root {
+  --primary: 0, 0%, 9%;
+  --background: 0, 0%, 89%;
+  --highlight: 162deg 90% 19%;
+  --primary-color: hsl(var(--primary));
+  --background-color: hsl(var(--background));
+  --highlight-color: hsl(var(--highlight));
+  --background-transp: hsla(var(--background), 0.75);
 }
 
 * {
@@ -62,37 +181,39 @@ html {
 }
 
 body {
-  display: -ms-grid;
-  display: grid;
   height: 100%;
-  -ms-grid-columns: auto auto;
-      grid-template-columns: auto auto;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-column-gap: 4.8rem;
-          column-gap: 4.8rem;
-  background-image: url("../noise.svg"), -webkit-gradient(linear, left top, left bottom, from(#336996), color-stop(#14334d), to(#010308));
-  background-image: url("../noise.svg"), linear-gradient(#336996, #14334d, #010308);
-  color: #161616;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(51, 105, 150, 0.5)), color-stop(rgba(20, 51, 77, 0.5)), to(rgba(1, 3, 8, 0.5))), url("../imgs/abstract-expressionism-abstract-painting-expressionism-sml.jpg");
+  background-image: linear-gradient(rgba(51, 105, 150, 0.5), rgba(20, 51, 77, 0.5), rgba(1, 3, 8, 0.5)), url("../imgs/abstract-expressionism-abstract-painting-expressionism-sml.jpg");
+  color: var(--primary-color);
 }
 
-body.darkMode * {
-  color: #e2e2e2;
+body a {
+  color: var(--primary-color);
 }
 
 * > * {
-  margin-bottom: 1em;
+  margin-top: 1em;
 }
 
 p,
-li,
-a {
+li {
   font-size: 1.6rem;
+}
+
+p strong,
+li strong {
+  font-weight: 600;
 }
 
 h1 {
   font-size: 3.2rem;
+}
+
+h2 {
+  font-size: 2.4rem;
 }
 
 h3 {
@@ -101,5 +222,10 @@ h3 {
 
 h5 {
   font-size: 1.8rem;
+}
+
+li,
+a {
+  margin: 0;
 }
 /*# sourceMappingURL=main.css.map */

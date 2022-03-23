@@ -5,20 +5,11 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="stylesheet" href="./css/main.css" />
+		<script src="components/menu.js" type="text/javascript" defer></script>
 		<title>Document</title>
 	</head>
-	<body class="darkMode">
-		<div class="menu">
-			<div>
-				<h3>BUS</h3>
-				<p>Mental Health Support Chat</p>
-			</div>
-			<ul>
-				<li><a href="" class="active">Home</a></li>
-				<li><a href="">Self-harm alternatives</a></li>
-				<li><a href="">Guidelines</a></li>
-			</ul>
-		</div>
+	<body>
+		<menu-component activePage="home"></menu-component>
 		<section class="content">
 			<h1>Home</h1>
 			<h3>Welcome to the #bus Mental Health Support Chat</h3>
@@ -41,15 +32,18 @@
 				<br />
 				We operate on a discord server. For legal reasons, you must be at least
 				13 years old to use the chatroom. If you are under 13, we encourage you
-				to discuss your struggles with a teacher, doctor, parent, friend’s
+				to discuss your struggles with a teacher, doctor, parent, friend's
 				parent, or adult you trust.
 				<br />
 				<br />
 				We have members from all over the world and the activity level ebbs and
-				flows over the course of the day. If it’s quiet when you join, we’d urge
+				flows over the course of the day. If it's quiet when you join, we'd urge
 				you to stick around for a bit or try again later.
 			</p>
-			<h5>Come chat with us in Discord.</h5>
+			<h5>
+				Come chat with us in
+				<a href="https://discord.gg/Ucawdv2fG8" target="_blank">Discord</a>.
+			</h5>
 			<h3>About Us</h3>
 			<p>
 				#bus is a peer-support chatroom that was founded in 1996 as a safe,
@@ -66,7 +60,7 @@
 				<br />
 				We consider ourselves to be a pro-recovery chatroom; however you do not
 				have to be ready to make changes to join #bus, and many of our members
-				aren’t. Within the “pro-recovery” mindset, we ask that you not actively
+				aren't. Within the “pro-recovery” mindset, we ask that you not actively
 				discourage others from stopping unhealthy practices or seeking help.
 				<br />
 				<br />

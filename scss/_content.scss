@@ -1,8 +1,21 @@
 section.content {
-	max-width: 80rem;
-	margin: auto;
-	background: rgba(0, 0, 0, 0.65);
-	padding: 1.6rem;
+	justify-self: flex-start;
+	margin: 1.6rem;
+	background: var(--background-transp);
+	padding: 3.2rem;
+	border-radius: 0.4rem;
 	h1 {
+	}
+
+	& ul,
+	ol {
+		padding-left: 2.4rem;
+	}
+
+	@media (min-width: 1023px) {
+		max-width: 80rem;
+		padding: 1.6rem;
+		margin: auto;
+		border-radius: 0 0 0.4rem 0.4rem;
 	}
 }
