@@ -132,6 +132,20 @@ div.menu div.switch.on:before {
   background-image: url("../imgs/moon.svg");
 }
 
+div.menu ul.subList {
+  background-color: var(--op-background-transp);
+  -webkit-box-shadow: inset 0 0 10px var(--background-color);
+          box-shadow: inset 0 0 10px var(--background-color);
+}
+
+div.menu ul.subList a {
+  color: var(--background-color);
+}
+
+div.menu ul.subList li {
+  border-color: var(--background-color);
+}
+
 @media (min-width: 1199px) {
   div.menu {
     position: fixed;
@@ -171,6 +185,7 @@ div.menu div.switch.on:before {
   --background-color: hsl(var(--background));
   --highlight-color: hsl(var(--highlight));
   --background-transp: hsla(var(--background), 0.75);
+  --op-background-transp: hsla(var(--primary), 0.75);
 }
 
 * {

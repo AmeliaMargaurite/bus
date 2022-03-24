@@ -94,6 +94,18 @@ div.menu {
 		}
 	}
 
+	& ul.subList {
+		background-color: var(--op-background-transp);
+		box-shadow: inset 0 0 10px var(--background-color);
+		a {
+			color: var(--background-color);
+		}
+
+		li {
+			border-color: var(--background-color);
+		}
+	}
+
 	@media (min-width: 1199px) {
 		position: fixed;
 		top: 0;
